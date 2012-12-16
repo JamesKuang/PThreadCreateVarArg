@@ -41,7 +41,7 @@ namespace incyc {
 
 	// User calls this function
 	template <typename T, typename R, typename... ATs>
-	pthread_t thread_var_arg(T *obj, R (T::*mem)(ATs...), ATs... args) {
+	pthread_t pthread_var_arg(T *obj, R (T::*mem)(ATs...), ATs... args) {
 		std::tuple<ATs...> params = std::make_tuple(args...);
 		Call<T, R, ATs...> *call_arg_p = new Call<T, R, ATs...>(obj, mem, params);
 		pthread_t tid = 0;
