@@ -8,20 +8,17 @@ User calls **pthread_var_arg** directly. Sample usage:
 	#include "PThreadCreateVarArg.hpp"
 	#include <iostream>
 	
-	using std::cout;
-	using std::endl;
-	
 	struct A {
 		void method1(int a, double b, int *c) {
-			cout << "method1: " << a << ", " << b << ", " << *c << endl;
+			std::cout << "method1: " << a << ", " << b << ", " << *c << std::endl;
 		}
 	
 		void method2(const char *c, std::string s) {
-			cout << "method2: " << c << ", " << s << endl;
+			std::cout << "method2: " << c << ", " << s << std::endl;
 		}
 	
 		void method3() {
-			cout << "method3: no arguments" << endl;
+			std::cout << "method3: no arguments" << std::endl;
 		}
 	};
 	
